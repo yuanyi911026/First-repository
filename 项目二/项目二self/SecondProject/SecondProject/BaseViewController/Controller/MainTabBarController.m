@@ -12,6 +12,8 @@
 
 @interface MainTabBarController ()
 
+
+
 @end
 
 @implementation MainTabBarController
@@ -34,6 +36,7 @@
     UIViewController *fiv = [fivStory instantiateInitialViewController];
     
     self.viewControllers = @[fir,sec,thi,fou,fiv];
+    
     
     
     // Do any additional setup after loading the view.

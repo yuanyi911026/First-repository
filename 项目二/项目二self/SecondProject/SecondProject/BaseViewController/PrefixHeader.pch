@@ -1,0 +1,17 @@
+//
+//  PrefixHeader.pch
+//  SecondProject
+//
+//  Created by xiacheng on 16/7/30.
+//  Copyright © 2016年 wuxianhulian. All rights reserved.
+//
+#define kAppKey @"114734230"
+#define kAppSecret @"d19f0ed2ca6c5ba5c52fceb881d68bc2"
+#define kAppRedirectURI @"http://www.baidu.com"
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */

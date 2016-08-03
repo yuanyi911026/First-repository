@@ -39,7 +39,12 @@
     if(self.data){
     
         CTFrameDraw(self.data.ctFrame, context);
-    
+        for (CoreTextImageData * imageData in self.data.imageArry) {
+            UIImage *image = [UIImage imageNamed:imageData.name];
+            if (image) {
+                CGContextDrawImage(context, imageData.imagePosition, image.CGImage);
+            }
+        }
     }
 }
 

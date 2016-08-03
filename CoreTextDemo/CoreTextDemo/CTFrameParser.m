@@ -9,6 +9,11 @@
 #import "CTFrameParser.h"
 #import "CTFrameParserConfig.h"
 @implementation CTFrameParser
+
+
+
+
+
 //返回行间距，字体，字体颜色组成的字典
 +(NSDictionary *)attributesWithConfig:(CTFrameParserConfig *)config{
     CGFloat fontSize = config.fontSize;
@@ -175,7 +180,7 @@
 +(CoreTextData *)parseTemplateFile:(NSString *)path config:(CTFrameParserConfig *)config {
     NSMutableArray *imageArry = [NSMutableArray array];
     NSAttributedString *content = [self loadTemplateFile:path config:config imageArry:imageArry];
-    CoreTextData *data = [self parseContent:content config:config];
+    CoreTextData *data = [self parseAttributedContent:content config:config];
     //如何赋值
     data.imageArry = imageArry;
     
@@ -241,10 +246,35 @@
         return nil;
     }
 }
-+ (NSAttributedString *)parseImageDataFromNSDictionary:(NSDictionary *)dict config:(CTFrameParserConfig *)config {
-    
 
-    return nil;
+//设置CTRunDelegate(CGFloat)
+static CGFloat ascentCallback(void *ref){
+    return [(NSNumber*)[(__bridge NSDictionary*)ref objectForKey:@"height"] floatValue];
+}
+static CGFloat descentCallback(void *ref){
+    return 0;
+}
+static CGFloat widthCallback(void * ref){
+    return [(NSNumber*)[(__bridge NSDictionary*)ref objectForKey:@"width"]floatValue];
+}
+
+
++ (NSAttributedString *)parseImageDataFromNSDictionary:(NSDictionary *)dict config:(CTFrameParserConfig *)config {
+    CTRunDelegateCallbacks  callbacks;
+    memset(&callbacks, 0, sizeof(CTRunDelegateCallbacks));
+    callbacks.version = kCTRunDelegateVersion1;
+    callbacks.getAscent = ascentCallback;
+    callbacks.getDescent = descentCallback;
+    callbacks.getWidth = widthCallback;
+    CTRunDelegateRef delegate = CTRunDelegateCreate(&callbacks, (__bridge void*)(dict));
+    //使用0xFFFC作为空白的占位符
+    unichar objectReplacementChar = 0xFFFC;
+    NSString *content = [NSString stringWithCharacters:&objectReplacementChar length:1];
+    NSDictionary *attibutes = [self attributesWithConfig:config];
+    NSMutableAttributedString *space = [[NSMutableAttributedString alloc]initWithString:content attributes:attibutes];
+    CFAttributedStringSetAttribute((CFMutableAttributedStringRef) space, CFRangeMake(0, 1), kCTRunDelegateAttributeName, delegate);
+    CFRelease(delegate);
+    return space;
 }
 
 //+(CTFrameRef)createFrameWithFramesetter:(CTFramesetterRef)framesetter

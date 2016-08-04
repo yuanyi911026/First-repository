@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CED98B01D52E8CA002078A0 /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CED98AF1D52E8CA002078A0 /* ThemeManager.m */; };
+		1CED98B21D52E92A002078A0 /* Skins in Resources */ = {isa = PBXBuildFile; fileRef = 1CED98B11D52E92A002078A0 /* Skins */; };
+		1CED98B41D52E95D002078A0 /* ThemeName.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CED98B31D52E95D002078A0 /* ThemeName.plist */; };
+		1CED98B71D5303A6002078A0 /* ThemeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CED98B61D5303A6002078A0 /* ThemeButton.m */; };
+		1CED98BA1D530926002078A0 /* ThemeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CED98B91D530926002078A0 /* ThemeImageView.m */; };
+		1CED98BD1D531AE3002078A0 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CED98BC1D531AE3002078A0 /* BaseNavigationController.m */; };
+		1CED98C01D532E9C002078A0 /* ThemeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CED98BF1D532E9C002078A0 /* ThemeLabel.m */; };
+		1CED98C31D53657C002078A0 /* ThemeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CED98C21D53657C002078A0 /* ThemeTableView.m */; };
 		1CF117A01D51C30200D6A958 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1179F1D51C30200D6A958 /* main.m */; };
 		1CF117AB1D51C30200D6A958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF117AA1D51C30200D6A958 /* Assets.xcassets */; };
 		1CF117AE1D51C30200D6A958 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CF117AC1D51C30200D6A958 /* LaunchScreen.storyboard */; };
@@ -666,6 +674,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1CED98AE1D52E8CA002078A0 /* ThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
+		1CED98AF1D52E8CA002078A0 /* ThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
+		1CED98B11D52E92A002078A0 /* Skins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Skins; sourceTree = "<group>"; };
+		1CED98B31D52E95D002078A0 /* ThemeName.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ThemeName.plist; sourceTree = "<group>"; };
+		1CED98B51D5303A6002078A0 /* ThemeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeButton.h; sourceTree = "<group>"; };
+		1CED98B61D5303A6002078A0 /* ThemeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeButton.m; sourceTree = "<group>"; };
+		1CED98B81D530926002078A0 /* ThemeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeImageView.h; sourceTree = "<group>"; };
+		1CED98B91D530926002078A0 /* ThemeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeImageView.m; sourceTree = "<group>"; };
+		1CED98BB1D531AE3002078A0 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		1CED98BC1D531AE3002078A0 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		1CED98BE1D532E9C002078A0 /* ThemeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeLabel.h; sourceTree = "<group>"; };
+		1CED98BF1D532E9C002078A0 /* ThemeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeLabel.m; sourceTree = "<group>"; };
+		1CED98C11D53657C002078A0 /* ThemeTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeTableView.h; sourceTree = "<group>"; };
+		1CED98C21D53657C002078A0 /* ThemeTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeTableView.m; sourceTree = "<group>"; };
 		1CF1179B1D51C30200D6A958 /* WeiboProgressTwo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiboProgressTwo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF1179F1D51C30200D6A958 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1CF117AA1D51C30200D6A958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1433,6 +1455,8 @@
 			children = (
 				1CF118051D51E0B900D6A958 /* MainTabBarController.h */,
 				1CF118061D51E0B900D6A958 /* MainTabBarController.m */,
+				1CED98BB1D531AE3002078A0 /* BaseNavigationController.h */,
+				1CED98BC1D531AE3002078A0 /* BaseNavigationController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1441,6 +1465,15 @@
 			isa = PBXGroup;
 			children = (
 				1CF13FAA1D51E5C900D6A958 /* Header.h */,
+				1CED98AE1D52E8CA002078A0 /* ThemeManager.h */,
+				1CED98AF1D52E8CA002078A0 /* ThemeManager.m */,
+				1CED98B31D52E95D002078A0 /* ThemeName.plist */,
+				1CED98B51D5303A6002078A0 /* ThemeButton.h */,
+				1CED98B61D5303A6002078A0 /* ThemeButton.m */,
+				1CED98B81D530926002078A0 /* ThemeImageView.h */,
+				1CED98B91D530926002078A0 /* ThemeImageView.m */,
+				1CED98BE1D532E9C002078A0 /* ThemeLabel.h */,
+				1CED98BF1D532E9C002078A0 /* ThemeLabel.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1563,6 +1596,8 @@
 			children = (
 				1CF117F91D51DF2C00D6A958 /* MoreViewController.h */,
 				1CF117FA1D51DF2C00D6A958 /* MoreViewController.m */,
+				1CED98C11D53657C002078A0 /* ThemeTableView.h */,
+				1CED98C21D53657C002078A0 /* ThemeTableView.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1995,6 +2030,7 @@
 		1CF13C2D1D51E57900D6A958 /* Skins */ = {
 			isa = PBXGroup;
 			children = (
+				1CED98B11D52E92A002078A0 /* Skins */,
 				1CF13C2E1D51E57900D6A958 /* cat */,
 			);
 			path = Skins;
@@ -2457,6 +2493,7 @@
 				1CF13E051D51E57A00D6A958 /* 065@2x.png in Resources */,
 				1CF13E631D51E57A00D6A958 /* 097.gif in Resources */,
 				1CF13DD21D51E57A00D6A958 /* 048@2x.png in Resources */,
+				1CED98B41D52E95D002078A0 /* ThemeName.plist in Resources */,
 				1CF13ED31D51E57A00D6A958 /* compose_toolbar_1.png in Resources */,
 				1CF13DAF1D51E57A00D6A958 /* 037.gif in Resources */,
 				1CF13EED1D51E57A00D6A958 /* detail_button_forward@2x.png in Resources */,
@@ -2565,6 +2602,7 @@
 				1CF13E251D51E57A00D6A958 /* 076.png in Resources */,
 				1CF13EA61D51E57A00D6A958 /* bg_ref.jpg in Resources */,
 				1CF13F7D1D51E57A00D6A958 /* timeline_avatar_home_selected_mask.png in Resources */,
+				1CED98B21D52E92A002078A0 /* Skins in Resources */,
 				1CF13DCE1D51E57A00D6A958 /* 047.png in Resources */,
 				1CF13DC01D51E57A00D6A958 /* 042@2x.png in Resources */,
 				1CF13F821D51E57A00D6A958 /* timeline_avatar_selected_mask@2x.png in Resources */,
@@ -3063,10 +3101,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CED98C01D532E9C002078A0 /* ThemeLabel.m in Sources */,
 				1CF117EB1D51C78D00D6A958 /* AppDelegate.m in Sources */,
 				1CF117FE1D51DF3900D6A958 /* MessageViewController.m in Sources */,
 				1CF13FCA1D5205B300D6A958 /* JSONKit.m in Sources */,
 				1CF118041D51DF5200D6A958 /* DiscoverViewController.m in Sources */,
+				1CED98BD1D531AE3002078A0 /* BaseNavigationController.m in Sources */,
 				1CF117FB1D51DF2C00D6A958 /* MoreViewController.m in Sources */,
 				1CF13FCD1D5205B300D6A958 /* SinaWeiboAuthorizeView.m in Sources */,
 				1CF13FCC1D5205B300D6A958 /* SinaWeibo.m in Sources */,
@@ -3074,7 +3114,11 @@
 				1CF117A01D51C30200D6A958 /* main.m in Sources */,
 				1CF118071D51E0B900D6A958 /* MainTabBarController.m in Sources */,
 				1CF118011D51DF4400D6A958 /* HomeViewController.m in Sources */,
+				1CED98B01D52E8CA002078A0 /* ThemeManager.m in Sources */,
+				1CED98BA1D530926002078A0 /* ThemeImageView.m in Sources */,
 				1CF13FCE1D5205B300D6A958 /* SinaWeiboRequest.m in Sources */,
+				1CED98B71D5303A6002078A0 /* ThemeButton.m in Sources */,
+				1CED98C31D53657C002078A0 /* ThemeTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3206,7 +3250,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WeiboProgressTwo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiacheng.WeiboProgressTwo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3218,7 +3262,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WeiboProgressTwo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiacheng.WeiboProgressTwo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

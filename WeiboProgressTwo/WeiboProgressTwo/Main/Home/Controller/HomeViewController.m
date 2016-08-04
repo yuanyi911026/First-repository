@@ -8,6 +8,8 @@
 
 #import "HomeViewController.h"
 #import "AppDelegate.h"
+#import "ThemeManager.h"
+#import "ThemeLabel.h"
 @interface HomeViewController ()<SinaWeiboDelegate>
 
 @end
@@ -29,19 +31,39 @@
     
     
     [sinaWeibo logIn];
-
-    // Do any additional setup after loading the view.
+   
+    //由于 NSNotification是先add再post,所以要想调用add才能初始化
+    [ThemeManager shareManager].themeName = @"猫爷";
 }
+
+
+//保存认证数据
+- (void)storeAuthData
+{
+    SinaWeibo *sinaweibo = [self sinaweibo];
+    
+    NSDictionary *authData = [NSDictionary dictionaryWithObjectsAndKeys:
+                              sinaweibo.accessToken, @"AccessTokenKey",
+                              sinaweibo.expirationDate, @"ExpirationDateKey",
+                              sinaweibo.userID, @"UserIDKey",
+                              sinaweibo.refreshToken, @"refresh_token", nil];
+    [[NSUserDefaults standardUserDefaults] setObject:authData forKey:@"SinaWeiboAuthData"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+
 //登陆调用的代理方法
 - (void)sinaweiboDidLogIn:(SinaWeibo *)sinaweibo{
     
     //请求网络数据
+    [self storeAuthData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation

@@ -8,9 +8,12 @@
 
 #import "MainTabBarController.h"
 #import "Header.h"
-
+#import "ThemeButton.h"
+#import "ThemeImageView.h"
 @interface MainTabBarController ()
-
+{
+    ThemeImageView *selectImg;
+}
 @end
 
 @implementation MainTabBarController
@@ -33,6 +36,13 @@
     
 }
 - (void)_removeSubViews {
+    
+    ThemeImageView *barImage = [[ThemeImageView alloc]initWithFrame:self.tabBar.bounds];
+    barImage.themeImageView = @"mask_titlebar";
+    [self.tabBar addSubview:barImage];
+    
+
+
     for (UIView *view  in self.tabBar.subviews) {
         Class class = NSClassFromString(@"UITabBarButton");
         if ([view isKindOfClass:class]) {
@@ -41,19 +51,32 @@
         /*
          home_tab_icon_1
          */
+        
+        
         for (NSInteger i = 0; i < 5; i++) {
-            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            ThemeButton *button = [ThemeButton buttonWithType:UIButtonTypeCustom];
             NSString *imageName = [NSString stringWithFormat:@"home_tab_icon_%li",i+1];
             
             [self.tabBar addSubview:button];
             button.frame = CGRectMake(i*kScreenWidth/5, 0,kScreenWidth/5, 49);
-            [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+
+            button.themeButtonImage = imageName;
+            button.tag = i;
+            [button addTarget:self action:@selector(buttonAcction:) forControlEvents:UIControlEventTouchUpInside];
         }
-//        self.tabBar.backgroundImage = [UIImage imageNamed:@"mask_titlebar.png"];
-        [self.tabBar setBackgroundImage:[UIImage imageNamed:@"mask_titlebar"]];
+        
     }
 
+    selectImg = [[ThemeImageView alloc]init];
+    selectImg.themeImageView = @"home_bottom_tab_arrow";
+    selectImg.frame = CGRectMake(0, 0, kScreenWidth/5, 49);
+    [self.tabBar addSubview:selectImg];
+    
 
+}
+- (void)buttonAcction:(UIButton *)button {
+    selectImg.center = button.center;
+    self.selectedIndex = button.tag;
 
 }
 

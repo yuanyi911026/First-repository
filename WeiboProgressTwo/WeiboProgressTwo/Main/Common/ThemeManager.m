@@ -27,6 +27,8 @@
     self = [super init];
     if  (self) {
         //防止循环引用
+      
+        
         _themeName = @"猫爷";
        
     }
@@ -37,6 +39,12 @@
     //发送通知
     
     [[NSNotificationCenter defaultCenter]postNotificationName:@"ThmeChangeNSNotification" object:nil];
+    
+     NSArray *arry = @[[ThemeManager shareManager].themeName];
+     [[NSUserDefaults standardUserDefaults] setObject:arry forKey:@"themeName"];
+     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+
     themeColorDict = nil;
 }
 

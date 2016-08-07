@@ -10,11 +10,24 @@
 #import "AppDelegate.h"
 #import "ThemeManager.h"
 #import "ThemeLabel.h"
-@interface HomeViewController ()<SinaWeiboDelegate>
+#import "WeiboModel.h"
+#import "YYModel.h"
+#import "WeiboTableView.h"
+#import "WeiboLayout.h"
+@interface HomeViewController ()<SinaWeiboDelegate,SinaWeiboRequestDelegate>
+@property (nonatomic,strong)NSMutableArray *weiboList;
+@property (weak, nonatomic) IBOutlet WeiboTableView *weiboTableView;
 
 @end
 
 @implementation HomeViewController
+- (NSMutableArray *)weiboList {
+    if (_weiboList == nil) {
+        _weiboList = [NSMutableArray array];
+    }
+    return _weiboList;
+}
+
 //获取新浪微博对象
 - (SinaWeibo *)sinaweibo
 {
@@ -33,7 +46,7 @@
     [sinaWeibo logIn];
    
     //由于 NSNotification是先add再post,所以要想调用add才能初始化
-    [ThemeManager shareManager].themeName = @"猫爷";
+    //[ThemeManager shareManager].themeName = @"猫爷";
 }
 
 
@@ -57,7 +70,31 @@
     
     //请求网络数据
     [self storeAuthData];
+    [sinaweibo requestWithURL:@"statuses/home_timeline.json?access_token=2.00bvfj7G0Gc6lH181b9612d8Q8Bv4C" params:nil httpMethod:@"GET" delegate:self];
+    
+
 }
+
+//接收到请求
+- (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result {
+   
+    NSArray *statuses = result[@"statuses"];
+    for (NSDictionary *status in statuses) {
+        
+        WeiboModel *weiboModel = [WeiboModel yy_modelWithDictionary:status];
+        
+        
+        
+        WeiboLayout *layout = [[WeiboLayout alloc]init];
+        layout.weiboModel = weiboModel;
+        
+        [self.weiboList addObject:layout];
+    }
+    
+    self.weiboTableView.weiboArry = self.weiboList;
+   [self.weiboTableView reloadData];
+}
+//重名解决
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

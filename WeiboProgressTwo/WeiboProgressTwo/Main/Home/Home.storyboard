@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Nvb-Sh-5HA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Nvb-Sh-5HA">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -19,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVn-81-vvG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-847" y="387"/>
+            <point key="canvasLocation" x="87" y="193"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="gyC-3G-hix">
@@ -30,15 +30,69 @@
                         <viewControllerLayoutGuide type="bottom" id="kJn-QY-WZ3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cgH-Wy-avd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6pP-8a-KIi" customClass="WeiboTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weiboCell" id="7BL-eX-Ttq" customClass="WeiboCell">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7BL-eX-Ttq" id="gn0-qR-c9U">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aTI-SD-Gq6">
+                                                    <rect key="frame" x="8" y="5" width="40" height="40"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="用户昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeG-w3-wx2">
+                                                    <rect key="frame" x="59" y="5" width="89" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="来源" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7r-Fb-rzJ">
+                                                    <rect key="frame" x="270" y="30" width="34" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owo-LW-Yfu">
+                                                    <rect key="frame" x="74" y="30" width="34" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nickNameLabel" destination="AeG-w3-wx2" id="ZnG-cB-xVn"/>
+                                            <outlet property="photoImage" destination="aTI-SD-Gq6" id="Hof-2M-JBK"/>
+                                            <outlet property="sourceLabel" destination="I7r-Fb-rzJ" id="AE7-w0-Frd"/>
+                                            <outlet property="timeLabel" destination="Owo-LW-Yfu" id="USI-Ie-Fh4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6pP-8a-KIi" firstAttribute="leading" secondItem="cgH-Wy-avd" secondAttribute="leading" id="Ff9-q5-ktn"/>
+                            <constraint firstAttribute="trailing" secondItem="6pP-8a-KIi" secondAttribute="trailing" id="J29-Jm-jMj"/>
+                            <constraint firstItem="6pP-8a-KIi" firstAttribute="top" secondItem="cgH-Wy-avd" secondAttribute="top" id="XRp-8P-U1N"/>
+                            <constraint firstItem="kJn-QY-WZ3" firstAttribute="top" secondItem="6pP-8a-KIi" secondAttribute="bottom" id="gXU-Ht-Rqv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6Jd-z8-PRk"/>
+                    <connections>
+                        <outlet property="weiboTableView" destination="6pP-8a-KIi" id="91u-7I-eYE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ex7-Js-mV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="411" y="397"/>
+            <point key="canvasLocation" x="431" y="198"/>
         </scene>
     </scenes>
 </document>

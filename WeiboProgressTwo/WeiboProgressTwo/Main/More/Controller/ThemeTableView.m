@@ -86,18 +86,11 @@
     
     [ThemeManager shareManager].themeName = array[indexPath.row];
     
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"ThmeChangeNSNotification" object:nil];
+       
     status[indexPath.row] = YES;
     [tableView reloadData];
 }
 
-
-//没进这个方法
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%li",indexPath.row);
-    status[indexPath.row] = NO;
-    [tableView reloadData];
-}
 
 
 /*

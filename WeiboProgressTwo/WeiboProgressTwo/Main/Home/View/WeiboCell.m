@@ -12,6 +12,7 @@
 #import "Header.h"
 #import "WeiboLayout.h"
 #import "WeiboModel.h"
+#import "weiboCollectionView.h"
 @implementation WeiboCell
 /*
  @property (weak, nonatomic) IBOutlet UILabel *sourceLabel;
@@ -23,6 +24,22 @@
  */
 - (void)awakeFromNib {
     // Initialization code
+}
+- (weiboCollectionView *)collectionView {
+    if (_collectionView == nil) {
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
+        flowLayout.minimumLineSpacing = 7.5;
+        flowLayout.itemSize = CGSizeMake(95,95);
+        flowLayout.minimumInteritemSpacing = 7.5;
+        
+
+        _collectionView = [[weiboCollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+        
+        
+        [self.contentView addSubview:_collectionView];
+        
+    }
+    return _collectionView;
 }
 - (UIImageView *)weiboImgView {
     if (_weiboImgView == nil) {
@@ -59,7 +76,7 @@
     [_photoImage sd_setImageWithURL:[NSURL URLWithString:url]];
     self.weiboLabel.text = weiboLay.weiboModel.text;
     self.weiboLabel.frame = weiboLay.weiboTextFrame;
-  
+    /*
     if (weiboLay.weiboModel.thumbnail_pic) {
         [self.weiboImgView sd_setImageWithURL:[NSURL URLWithString:weiboLay.weiboModel.thumbnail_pic]];
         _weiboImgView.frame = weiboLay.weiboImageViewFrame;
@@ -68,6 +85,13 @@
     }else{
         self.weiboImgView.image = nil;
     }
+    */
+    
+        self.collectionView.imageArry = weiboLay.weiboModel.pic_urls;
+        self.collectionView.frame = weiboLay.collectionViewFrame;
+    
+   
+//[self.collectionView reloadData];
     
 
 }

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class weiboCollectionView;
 @class WeiboLayout;
 @interface WeiboCell : UITableViewCell
 @property (nonatomic,strong)  WeiboLayout *weiboLay;
@@ -19,4 +19,5 @@
 @property (nonatomic,strong) UILabel *weiboLabel;
 @property (nonatomic,strong)UIImageView *weiboImgView;
 @property (nonatomic,strong)UIImageView *backgroundImgView;
+@property (nonatomic,strong)weiboCollectionView *collectionView;
 @end

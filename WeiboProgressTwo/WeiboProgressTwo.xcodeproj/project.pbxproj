@@ -34,6 +34,16 @@
 		1CDAE5801D55AA9B00BC652D /* SinaWeiboAuthorizeView.h in Sources */ = {isa = PBXBuildFile; fileRef = 1CF13FC51D5205B300D6A958 /* SinaWeiboAuthorizeView.h */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1CDAE5811D55AA9B00BC652D /* SinaWeiboConstants.h in Sources */ = {isa = PBXBuildFile; fileRef = 1CF13FC71D5205B300D6A958 /* SinaWeiboConstants.h */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1CDAE5821D55AA9B00BC652D /* SinaWeiboRequest.h in Sources */ = {isa = PBXBuildFile; fileRef = 1CF13FC81D5205B300D6A958 /* SinaWeiboRequest.h */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1CE0CBF21D5766830060D64C /* weiboCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE0CBF11D5766830060D64C /* weiboCollectionView.m */; };
+		1CE0CBF31D57B3BA0060D64C /* JSONKit.h in Sources */ = {isa = PBXBuildFile; fileRef = 1CF13FBF1D5205B300D6A958 /* JSONKit.h */; };
+		1CE84D6D1D581DEF00B25A07 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE84D651D581DEF00B25A07 /* MMDrawerBarButtonItem.m */; };
+		1CE84D6E1D581DEF00B25A07 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE84D681D581DEF00B25A07 /* MMDrawerController.m */; };
+		1CE84D6F1D581DEF00B25A07 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE84D6A1D581DEF00B25A07 /* MMDrawerVisualState.m */; };
+		1CE84D701D581DEF00B25A07 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE84D6C1D581DEF00B25A07 /* UIViewController+MMDrawerController.m */; };
+		1CE84D731D58309000B25A07 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE84D721D58309000B25A07 /* LeftViewController.m */; };
+		1CE84D761D5830A100B25A07 /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE84D751D5830A100B25A07 /* RightViewController.m */; };
+		1CE84D7D1D5833D500B25A07 /* UIScrollView+PullDownRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE84D791D5833D500B25A07 /* UIScrollView+PullDownRefresh.m */; };
+		1CE84D7E1D5833D500B25A07 /* UIScrollView+PullUpRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE84D7B1D5833D500B25A07 /* UIScrollView+PullUpRefresh.m */; };
 		1CED98B01D52E8CA002078A0 /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CED98AF1D52E8CA002078A0 /* ThemeManager.m */; };
 		1CED98B21D52E92A002078A0 /* Skins in Resources */ = {isa = PBXBuildFile; fileRef = 1CED98B11D52E92A002078A0 /* Skins */; };
 		1CED98B41D52E95D002078A0 /* ThemeName.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CED98B31D52E95D002078A0 /* ThemeName.plist */; };
@@ -749,6 +759,26 @@
 		1CD7DF151D5476C600E5B134 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
 		1CDAE57C1D557A5400BC652D /* WeiboLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboLayout.h; sourceTree = "<group>"; };
 		1CDAE57D1D557A5400BC652D /* WeiboLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboLayout.m; sourceTree = "<group>"; };
+		1CE0CBF01D5766830060D64C /* weiboCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = weiboCollectionView.h; sourceTree = "<group>"; };
+		1CE0CBF11D5766830060D64C /* weiboCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = weiboCollectionView.m; sourceTree = "<group>"; };
+		1CE84D641D581DEF00B25A07 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		1CE84D651D581DEF00B25A07 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		1CE84D661D581DEF00B25A07 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
+		1CE84D671D581DEF00B25A07 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
+		1CE84D681D581DEF00B25A07 /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerController.m; sourceTree = "<group>"; };
+		1CE84D691D581DEF00B25A07 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualState.h; sourceTree = "<group>"; };
+		1CE84D6A1D581DEF00B25A07 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
+		1CE84D6B1D581DEF00B25A07 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		1CE84D6C1D581DEF00B25A07 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		1CE84D711D58309000B25A07 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
+		1CE84D721D58309000B25A07 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		1CE84D741D5830A100B25A07 /* RightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
+		1CE84D751D5830A100B25A07 /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
+		1CE84D781D5833D500B25A07 /* UIScrollView+PullDownRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+PullDownRefresh.h"; sourceTree = "<group>"; };
+		1CE84D791D5833D500B25A07 /* UIScrollView+PullDownRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+PullDownRefresh.m"; sourceTree = "<group>"; };
+		1CE84D7A1D5833D500B25A07 /* UIScrollView+PullUpRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+PullUpRefresh.h"; sourceTree = "<group>"; };
+		1CE84D7B1D5833D500B25A07 /* UIScrollView+PullUpRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+PullUpRefresh.m"; sourceTree = "<group>"; };
+		1CE84D7C1D5833D500B25A07 /* WXRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXRefresh.h; sourceTree = "<group>"; };
 		1CED98AE1D52E8CA002078A0 /* ThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
 		1CED98AF1D52E8CA002078A0 /* ThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
 		1CED98B11D52E92A002078A0 /* Skins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Skins; sourceTree = "<group>"; };
@@ -1500,6 +1530,34 @@
 			path = YYModel;
 			sourceTree = "<group>";
 		};
+		1CE84D631D581DEF00B25A07 /* MMDrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				1CE84D641D581DEF00B25A07 /* MMDrawerBarButtonItem.h */,
+				1CE84D651D581DEF00B25A07 /* MMDrawerBarButtonItem.m */,
+				1CE84D661D581DEF00B25A07 /* MMDrawerController+Subclass.h */,
+				1CE84D671D581DEF00B25A07 /* MMDrawerController.h */,
+				1CE84D681D581DEF00B25A07 /* MMDrawerController.m */,
+				1CE84D691D581DEF00B25A07 /* MMDrawerVisualState.h */,
+				1CE84D6A1D581DEF00B25A07 /* MMDrawerVisualState.m */,
+				1CE84D6B1D581DEF00B25A07 /* UIViewController+MMDrawerController.h */,
+				1CE84D6C1D581DEF00B25A07 /* UIViewController+MMDrawerController.m */,
+			);
+			path = MMDrawerController;
+			sourceTree = "<group>";
+		};
+		1CE84D771D5833D500B25A07 /* WXRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				1CE84D781D5833D500B25A07 /* UIScrollView+PullDownRefresh.h */,
+				1CE84D791D5833D500B25A07 /* UIScrollView+PullDownRefresh.m */,
+				1CE84D7A1D5833D500B25A07 /* UIScrollView+PullUpRefresh.h */,
+				1CE84D7B1D5833D500B25A07 /* UIScrollView+PullUpRefresh.m */,
+				1CE84D7C1D5833D500B25A07 /* WXRefresh.h */,
+			);
+			path = WXRefresh;
+			sourceTree = "<group>";
+		};
 		1CF117921D51C30200D6A958 = {
 			isa = PBXGroup;
 			children = (
@@ -1591,6 +1649,8 @@
 		1CF117D51D51C78D00D6A958 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1CE84D771D5833D500B25A07 /* WXRefresh */,
+				1CE84D631D581DEF00B25A07 /* MMDrawerController */,
 				1C882CA11D54AE7100C8927A /* SDWebImage */,
 				1CD7DF101D5476C600E5B134 /* YYModel */,
 				1CF13FAA1D51E5C900D6A958 /* Header.h */,
@@ -1657,6 +1717,10 @@
 			children = (
 				1CF117FF1D51DF4400D6A958 /* HomeViewController.h */,
 				1CF118001D51DF4400D6A958 /* HomeViewController.m */,
+				1CE84D711D58309000B25A07 /* LeftViewController.h */,
+				1CE84D721D58309000B25A07 /* LeftViewController.m */,
+				1CE84D741D5830A100B25A07 /* RightViewController.h */,
+				1CE84D751D5830A100B25A07 /* RightViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1681,6 +1745,8 @@
 				1C882C9C1D54833B00C8927A /* WeiboTableView.m */,
 				1C882C9E1D54836400C8927A /* WeiboCell.h */,
 				1C882C9F1D54836400C8927A /* WeiboCell.m */,
+				1CE0CBF01D5766830060D64C /* weiboCollectionView.h */,
+				1CE0CBF11D5766830060D64C /* weiboCollectionView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3240,6 +3306,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CE84D7D1D5833D500B25A07 /* UIScrollView+PullDownRefresh.m in Sources */,
+				1CE0CBF31D57B3BA0060D64C /* JSONKit.h in Sources */,
+				1CE84D6D1D581DEF00B25A07 /* MMDrawerBarButtonItem.m in Sources */,
 				1CDAE57F1D55AA9B00BC652D /* SinaWeibo.h in Sources */,
 				1CDAE5801D55AA9B00BC652D /* SinaWeiboAuthorizeView.h in Sources */,
 				1CDAE5811D55AA9B00BC652D /* SinaWeiboConstants.h in Sources */,
@@ -3251,16 +3320,20 @@
 				1CF117EB1D51C78D00D6A958 /* AppDelegate.m in Sources */,
 				1CF117FE1D51DF3900D6A958 /* MessageViewController.m in Sources */,
 				1C882CC81D54AE7100C8927A /* SDWebImageDownloader.m in Sources */,
+				1CE84D7E1D5833D500B25A07 /* UIScrollView+PullUpRefresh.m in Sources */,
 				1CF13FCA1D5205B300D6A958 /* JSONKit.m in Sources */,
 				1C882CC61D54AE7100C8927A /* SDWebImageCompat.m in Sources */,
+				1CE84D761D5830A100B25A07 /* RightViewController.m in Sources */,
 				1CF118041D51DF5200D6A958 /* DiscoverViewController.m in Sources */,
 				1CDAE57E1D557A5400BC652D /* WeiboLayout.m in Sources */,
 				1CD7DF0F1D5475D000E5B134 /* UserModel.m in Sources */,
 				1CED98BD1D531AE3002078A0 /* BaseNavigationController.m in Sources */,
 				1C882CD21D54AE7100C8927A /* UIView+WebCacheOperation.m in Sources */,
+				1CE84D6F1D581DEF00B25A07 /* MMDrawerVisualState.m in Sources */,
 				1CF117FB1D51DF2C00D6A958 /* MoreViewController.m in Sources */,
 				1CD7DF161D5476C600E5B134 /* NSObject+YYModel.m in Sources */,
 				1C882CD11D54AE7100C8927A /* UIImageView+WebCache.m in Sources */,
+				1CE84D6E1D581DEF00B25A07 /* MMDrawerController.m in Sources */,
 				1C882CCF1D54AE7100C8927A /* UIImage+WebP.m in Sources */,
 				1C882CC51D54AE7100C8927A /* SDImageCache.m in Sources */,
 				1CF13FCD1D5205B300D6A958 /* SinaWeiboAuthorizeView.m in Sources */,
@@ -3273,12 +3346,15 @@
 				1CF117A01D51C30200D6A958 /* main.m in Sources */,
 				1CF118071D51E0B900D6A958 /* MainTabBarController.m in Sources */,
 				1C882CC41D54AE7100C8927A /* NSData+ImageContentType.m in Sources */,
+				1CE84D731D58309000B25A07 /* LeftViewController.m in Sources */,
 				1CF118011D51DF4400D6A958 /* HomeViewController.m in Sources */,
 				1CED98B01D52E8CA002078A0 /* ThemeManager.m in Sources */,
 				1CED98BA1D530926002078A0 /* ThemeImageView.m in Sources */,
 				1C882CC71D54AE7100C8927A /* SDWebImageDecoder.m in Sources */,
 				1CF13FCE1D5205B300D6A958 /* SinaWeiboRequest.m in Sources */,
+				1CE84D701D581DEF00B25A07 /* UIViewController+MMDrawerController.m in Sources */,
 				1C882CA01D54836400C8927A /* WeiboCell.m in Sources */,
+				1CE0CBF21D5766830060D64C /* weiboCollectionView.m in Sources */,
 				1CED98B71D5303A6002078A0 /* ThemeButton.m in Sources */,
 				1C882C9D1D54833B00C8927A /* WeiboTableView.m in Sources */,
 				1C882CCB1D54AE7100C8927A /* SDWebImagePrefetcher.m in Sources */,

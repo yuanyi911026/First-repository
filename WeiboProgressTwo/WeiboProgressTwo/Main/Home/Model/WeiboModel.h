@@ -19,7 +19,10 @@
 @property(nonatomic,copy)NSString       *original_pic;     //原始图片地址
 @property(nonatomic,retain)NSDictionary *geo;               //地理信息字段
 @property(nonatomic,retain)NSNumber     *reposts_count;      //转发数
-@property(nonatomic,retain)NSNumber     *comments_count;      //评论数
+@property(nonatomic,retain)NSNumber     *comments_count;
+@property(nonatomic,strong)NSArray      *pic_urls;
+
+//评论数
 
 @property (nonatomic,strong)UserModel *user; //用户
 //转发微博

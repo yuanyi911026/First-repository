@@ -28,17 +28,24 @@
     //微博正文的frame
     self.weiboTextFrame = CGRectMake(kSpace, kCellHeight+kSpace , kScreenWidth - 20, textrect.size.height);
     
-    
+    /*
     if (self.weiboModel.thumbnail_pic) {
         self.weiboImageViewFrame = CGRectMake(kSpace, CGRectGetMaxY(self.weiboTextFrame), 100, 100);
     }else {
         self.weiboImageViewFrame = CGRectZero;
     }
+    */
+    if (self.weiboModel.pic_urls.count!=0) {
+        NSInteger row = (self.weiboModel.pic_urls.count-1)/3;
+        self.collectionViewFrame = CGRectMake(kSpace, CGRectGetMaxY(self.weiboTextFrame), 300, 100*(row+1));
+    }else {
+        self.collectionViewFrame = CGRectZero;
+    }
     
     
     //更新单元格的高度
     
-    self.rowHeight += CGRectGetHeight(self.weiboTextFrame)+kSpace+CGRectGetHeight(self.weiboImageViewFrame)+kSpace;
+    self.rowHeight += CGRectGetHeight(self.weiboTextFrame)+kSpace+CGRectGetHeight(self.collectionViewFrame)+kSpace;
     
     
     

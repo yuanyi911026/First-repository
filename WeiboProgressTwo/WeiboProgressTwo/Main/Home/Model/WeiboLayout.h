@@ -16,4 +16,6 @@
 @property (nonatomic,strong)WeiboModel *weiboModel;
 
 @property (nonatomic,assign)CGRect weiboImageViewFrame;
+@property (nonatomic,assign)CGRect collectionViewFrame;
+
 @end

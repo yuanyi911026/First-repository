@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6pP-8a-KIi" customClass="WeiboTableView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weiboCell" id="7BL-eX-Ttq" customClass="WeiboCell">
@@ -82,7 +82,7 @@
                             <constraint firstItem="6pP-8a-KIi" firstAttribute="leading" secondItem="cgH-Wy-avd" secondAttribute="leading" id="Ff9-q5-ktn"/>
                             <constraint firstAttribute="trailing" secondItem="6pP-8a-KIi" secondAttribute="trailing" id="J29-Jm-jMj"/>
                             <constraint firstItem="6pP-8a-KIi" firstAttribute="top" secondItem="cgH-Wy-avd" secondAttribute="top" id="XRp-8P-U1N"/>
-                            <constraint firstItem="kJn-QY-WZ3" firstAttribute="top" secondItem="6pP-8a-KIi" secondAttribute="bottom" id="gXU-Ht-Rqv"/>
+                            <constraint firstItem="kJn-QY-WZ3" firstAttribute="top" secondItem="6pP-8a-KIi" secondAttribute="bottom" constant="-49" id="gXU-Ht-Rqv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6Jd-z8-PRk"/>
@@ -92,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ex7-Js-mV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="431" y="198"/>
+            <point key="canvasLocation" x="415" y="68"/>
         </scene>
     </scenes>
 </document>

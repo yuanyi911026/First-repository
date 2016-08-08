@@ -14,6 +14,7 @@
 #import "YYModel.h"
 #import "WeiboTableView.h"
 #import "WeiboLayout.h"
+#import "WXRefresh.h"
 @interface HomeViewController ()<SinaWeiboDelegate,SinaWeiboRequestDelegate>
 @property (nonatomic,strong)NSMutableArray *weiboList;
 @property (weak, nonatomic) IBOutlet WeiboTableView *weiboTableView;
@@ -44,9 +45,30 @@
     
     
     [sinaWeibo logIn];
+    [_weiboTableView addPullDownRefreshBlock:^{
+        [self _loadRequest];
+    }];
+    [_weiboTableView addPullDownRefreshBlock:^{
+        NSLog(@"上拉加载");
+    } position:PullDownRefreshPositionBottom];
+    
    
     //由于 NSNotification是先add再post,所以要想调用add才能初始化
     //[ThemeManager shareManager].themeName = @"猫爷";
+}
+- (void)_loadRequest {
+    
+    //获取当前最新微博的id
+    WeiboLayout *layout  = [self.weiboList firstObject];
+    
+    NSString *weiboID= layout.weiboModel.idstr;
+    
+    
+    SinaWeiboRequest *request = [[self sinaweibo] requestWithURL:@"statuses/home_timeline.json" params:[@{@"since_id" : weiboID}mutableCopy] httpMethod:@"GET" delegate:self];
+    //上拉加载发送的网络请求(1)
+    request.tag = 1;
+
+
 }
 
 
@@ -70,8 +92,8 @@
     
     //请求网络数据
     [self storeAuthData];
-    [sinaweibo requestWithURL:@"statuses/home_timeline.json?access_token=2.00bvfj7G0Gc6lH181b9612d8Q8Bv4C" params:nil httpMethod:@"GET" delegate:self];
-    
+   SinaWeiboRequest *request = [sinaweibo requestWithURL:@"statuses/home_timeline.json?access_token=2.00bvfj7G0Gc6lH181b9612d8Q8Bv4C" params:nil httpMethod:@"GET" delegate:self];
+    request.tag = 1;
 
 }
 
@@ -79,6 +101,7 @@
 - (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result {
    
     NSArray *statuses = result[@"statuses"];
+    NSMutableArray *tempArr = [NSMutableArray array];
     for (NSDictionary *status in statuses) {
         
         WeiboModel *weiboModel = [WeiboModel yy_modelWithDictionary:status];
@@ -88,8 +111,29 @@
         WeiboLayout *layout = [[WeiboLayout alloc]init];
         layout.weiboModel = weiboModel;
         
-        [self.weiboList addObject:layout];
+        [tempArr addObject:layout];
+    } //第一次加载
+    if (request.tag == 0) {
+        
+        
+        self.weiboList = tempArr;
+        
+    }//下拉刷新
+    else if (request.tag == 1){
+        //往数组的顶部追加最新的元素
+        NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, tempArr.count)];
+        
+        [self.weiboList insertObjects:tempArr atIndexes:set];
+        
+        //结束下拉刷新
+        
+        [self.weiboTableView.pullToRefreshView stopAnimating];
+        
+        
+        
+        
     }
+
     
     self.weiboTableView.weiboArry = self.weiboList;
    [self.weiboTableView reloadData];
